@@ -11,3 +11,22 @@ body {
     padding: 20px;  
 }
 
+.Map {
+max-width: 800px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+h1{
+  color: #667eea;
+    text-align: center;
+    margin-bottom: 30px;  
+}
+ 
+h2 {
+   color: #764ba2;
+    margin: 25px 0 15px 0; 
+}
