@@ -30,3 +30,9 @@ h2 {
    color: #764ba2;
     margin: 25px 0 15px 0; 
 }
+ form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 30px;
+ }
