@@ -48,3 +48,14 @@ h2 {
     border-radius: 5px;
     font-size: 16px;
  }
+
+ button {
+    background: #667eea;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+ }
+ 
