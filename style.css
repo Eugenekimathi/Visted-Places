@@ -58,4 +58,9 @@ h2 {
     font-size: 16px;
     cursor: pointer;
  }
+
+ button:hover{
+    background: #764ba2;
+ }
+
  
