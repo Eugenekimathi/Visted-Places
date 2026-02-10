@@ -4,6 +4,7 @@ function  Place(location, landmarks, timeOfYear, notes){
     this.landmarks = landmarks;
     this.timeOfYear = timeOfYear;
     this.notes = notes;
+    this.imageUrl=imageUrl;
 }
 
 Place.prototype.getInfo = function(){
@@ -70,7 +71,7 @@ function showPlaceDetails(id) {
         <p><strong>Time of Year:</strong> ${place.timeOfYear}</p>
         <p><strong>Landmarks:</strong> ${place.getLandmarks()}</p>
         <p><strong>Notes:</strong> ${place.notes}</p>
-        <button onclick="deletePlace(${id})">Delete Place</button>`;
+        <button onclick="deletePlace(${id })"></button>Delete</button>`;
     
     detailsDiv.style.display = "block";
      
@@ -82,8 +83,8 @@ function showPlaceDetails(id) {
 }
 
 // Event listener
-document.getElementById("place-form").addEventListener("submit", function(e) {
-    e.preventDefault();
+function handleAddplace(){
+
     let location = document.getElementById("location").value;
     let landmarksInput = document.getElementById("landmarks").value;
     let landmarks = landmarksInput.split(",").map(l => l.trim());
@@ -97,9 +98,9 @@ document.getElementById("place-form").addEventListener("submit", function(e) {
 
     // Form 
     document.getElementById("place-form").reset();
-});
+};
 
-document.getElementById("places list").addEventListener("click", function(e) {
+document.getElementById("places-list").addEventListener("click", function(e) {
     if (e.target.tagName === "LI") {
         let id = e.target.getAttribute("data-id");
         showPlaceDetails(id);
