@@ -7,16 +7,9 @@ function  Place(location, landmarks, timeOfYear, notes){
     this.imageUrl=imageUrl;
 }
 
-Place.prototype.getInfo = function(){
-    return this.location + " - " + this.timeOfYear + " - " + this.notes;
-};
-
-Place.prototype.addLandmark = function(landmark){
-    this.landmarks.push(landmark);
-};
-
-Place.prototype.getLandmarks = function(){
-    return this.landmarks.join(", ");
+//prototype method
+Place.prototype.details= function(){
+    return `${this.location} | landmark: ${this.landmark}| Best time: ${this.timeOfYear}|Notes:${this.notes}`;
 };
 
 // Travellog Logic
