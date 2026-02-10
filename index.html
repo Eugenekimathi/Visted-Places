@@ -2,42 +2,59 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=initial-scale=1.0">
-    <title>PLACES I'VE BEEN TO</title>
-   <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Places I've Been 2</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="Map">
- <h1>✈️ Places I've Been 2</h1>
 
- <h2>Add a New Place</h2>
- <form id="place-form">
-            <label for="location">Location:</label>
-            <input type="text" id="location" required>
-            
-            <label for="landmarks">Landmarks:</label>
-            <input type="text" id="landmarks" placeholder="Eiffel Tower, Louvre">
-            
-            <label for="time">Time of Year:</label>
-            <input type="text" id="time" placeholder="Summer 2024">
-            
-            <label for="notes">Notes:</label>
-            <textarea id="notes" rows="3"></textarea>
+    <!-- Toast notification shown when a place is deleted -->
+    <div id="toast">🗑️ Place removed successfully!</div>
 
-            <label for="imageUrl">Image URL:</label>
-            <input type="url" id="imageUrl" placeholder="Image URL">
-            
-            <button type="button" class= "btn-add" onclick="handleAddPlace()">Add Visited Place</button>
-        </form>
-        
-      <h2>Visited Places</h2>
-      <ul id="places-list"></ul>
-      
-      <div id="place-details" style="display: none;">
-            <h2>Place Details</h2>
-            <div id="details-content"></div>
+    <div id="Box">
+
+        <h1>Places I've Been To 🌍</h1>
+        <p class="tagline">My personal travel journal</p>
+
+        <!-- ADD PLACE FORM -->
+        <div id="form-group">
+            <h2>Add a New Place</h2>
+
+            <label for="location">Location 📍</label>
+            <input type="text" id="location" placeholder="e.g. Nairobi, Kenya" required>
+
+            <label for="landmark">Landmark 😎</label>
+            <input type="text" id="landmark" placeholder="e.g. Uhuru Park">
+
+            <label for="timeOfTheYear">Time of the Year ⏱️</label>
+            <input type="text" id="timeOfTheYear" placeholder="e.g. June 2024">
+
+            <label for="notes">Notes 📝</label>
+            <textarea id="notes" rows="3" placeholder="What made this place special?"></textarea>
+
+            <label for="imageUrl">Image URL 📸</label>
+            <input type="text" id="imageUrl" placeholder="Paste an image link (optional)">
+
+            <!-- type="button" + onclick avoids page refresh -->
+            <button type="button" class="btn-add" onclick="handleAddVisitedPlaces()">
+                ➕ Add Visited Place
+            </button>
         </div>
- </div>
-    <script src="js/scripts.js"></script>
+
+        <!-- VISITED PLACES LIST -->
+        <div id="list-section">
+            <h2>Visited Places</h2>
+            <p id="empty-msg">No places added yet. Start by adding one above! 🌏</p>
+            <ol id="list-of-places"></ol>
+        </div>
+
+        <!-- PLACE DETAILS  -->
+        <div id="places-details"></div>
+
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
