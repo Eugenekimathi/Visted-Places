@@ -98,3 +98,10 @@ document.getElementById("place-form").addEventListener("submit", function(e) {
     // Form 
     document.getElementById("place-form").reset();
 });
+
+document.getElementById("places list").addEventListener("click", function(e) {
+    if (e.target.tagName === "LI") {
+        let id = e.target.getAttribute("data-id");
+        showPlaceDetails(id);
+    }
+});
