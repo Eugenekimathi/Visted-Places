@@ -44,3 +44,39 @@ TravelLog.prototype.deletePlace = function(id){
     }
     return false;
 }
+
+ //  UI Logic
+let travelLog = new TravelLog();
+function displayPlaces() {
+    let placesList = document.getElementById("places-list");
+    placesList.innerHTML = "";
+    
+    for (let id in travelLog.places) {
+        let place = travelLog.places[id];
+        let li = document.createElement("li");
+        li.textContent = place.location;
+        li.setAttribute("data-id", id);
+        placesList.appendChild(li);
+    }
+}
+
+function showPlaceDetails(id) {
+    let place = travelLog.findPlace(parseInt(id));
+    let detailsDiv = document.getElementById("place-details");
+    let contentDiv = document.getElementById("details-content");
+
+     contentDiv.innerHTML = `
+        <h3>${place.location}</h3>
+        <p><strong>Time of Year:</strong> ${place.timeOfYear}</p>
+        <p><strong>Landmarks:</strong> ${place.getLandmarks()}</p>
+        <p><strong>Notes:</strong> ${place.notes}</p>
+        <button onclick="deletePlace(${id})">Delete Place</button>`;
+    
+    detailsDiv.style.display = "block";
+     
+    function deletePlace(id) {
+    travelLog.deletePlace(id);
+    displayPlaces();
+    document.getElementById("place-details").style.display = "none";
+}
+}
