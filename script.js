@@ -80,3 +80,21 @@ function showPlaceDetails(id) {
     document.getElementById("place-details").style.display = "none";
 }
 }
+
+// Event listener
+document.getElementById("place-form").addEventListener("submit", function(e) {
+    e.preventDefault();
+    let location = document.getElementById("location").value;
+    let landmarksInput = document.getElementById("landmarks").value;
+    let landmarks = landmarksInput.split(",").map(l => l.trim());
+    let time = document.getElementById("time").value;
+    let notes = document.getElementById("notes").value;
+    
+    let newPlace = new Place(location, landmarks, time, notes);
+    travelLog.addPlace(newPlace);
+    
+    displayPlaces();
+
+    // Form 
+    document.getElementById("place-form").reset();
+});
